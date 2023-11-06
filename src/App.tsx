@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonPage, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import Home from './Pages/Home/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,22 +21,35 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import ExploreContainer from './Layout/Tab/Tab';
+import AddProject from './Pages/AddProject/AddProject';
+import Tab from './Layout/Tab/Tab';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+  <IonPage>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Home/>
         </Route>
+        <Route exact path="/addProject">
+        
+          <AddProject/>
+        </Route>
+        <Route exact path="/tab">
+        
+        <Tab/>
+      </Route>
+      
       </IonRouterOutlet>
     </IonReactRouter>
-  </IonApp>
+   {/* <Home/> */}
+   
+   </IonPage>
+   </IonApp>
 );
 
 export default App;

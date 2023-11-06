@@ -1,0 +1,11 @@
+.ion-inherit-color{
+    padding-bottom: 6px !important;
+    padding-top: 6px !important;
+}
+
+.addCard{
+    height: 20% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
