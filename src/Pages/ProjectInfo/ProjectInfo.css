@@ -1,0 +1,31 @@
+.gapCardAdjustment1{
+    margin:8px 4px 4px 8px
+}
+.gapCardAdjustment2{
+    margin:8px 8px 4px 4px
+}
+ion-range {
+    --bar-background: #a2d2ff;
+    --bar-background-active: #bde0fe;
+    --bar-height: 10px;
+    --bar-border-radius: 10px;
+    --knob-background: #100b56;
+    --knob-size: 23px;
+    --pin-background: #ffafcc;
+    --pin-color: #fff;
+    padding: 0px 6px 0px 6px;   
+  }
+  h4{
+    padding: 2px 6px;
+  }
+  .gapAdjustment{
+    margin:2px 16px 14px 16px
+  }
+  .justifycenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .-webkit-fill-available{
+    width: -webkit-fill-available;
+  }

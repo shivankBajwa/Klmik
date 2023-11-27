@@ -1,7 +1,8 @@
 import React from 'react'
 import PageLayout from '../../Layout/PageLayout/PageLayout'
-import { IonBackButton, IonButton, IonButtons, IonCard, IonContent, IonHeader, IonIcon, IonInput, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react'
+import { IonBackButton, IonButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonPage, IonRow, IonTitle, IonToolbar, useIonRouter } from '@ionic/react'
 import { add } from 'ionicons/icons';
+import image2 from '../../assets/Klmik_Image_2.png'
 const AddProject=()=> {
 const router =useIonRouter();
   const AddProjectData=(e: React.FormEvent<HTMLFormElement>)=>{
@@ -10,7 +11,8 @@ const router =useIonRouter();
   }
   return (
     <>
-    <IonPage>   <IonHeader>
+    <IonPage>   
+      <IonHeader>
     <IonToolbar>
     <IonButtons slot='start'>
         <IonBackButton defaultHref='/'/>
@@ -19,7 +21,12 @@ const router =useIonRouter();
     </IonToolbar>
   </IonHeader>
   <IonContent className='ion-justify-content-center'>
-  <IonCard className='ion-padding' >
+ 
+    <IonGrid>
+      <IonRow className='ion-justify-content-center'>
+        <IonCol size='12' sizeMd='8' sizeLg='6' sizeXl='4'>
+        <IonCard className='ion-padding'  >
+        <img src={image2} max-width={'90%'} height={"30%"}/>
   <form onSubmit={AddProjectData}>
   <IonInput className='ion-margin-top' label="Project Name" type='text' labelPlacement="floating" fill='outline' placeholder="Enter Project Name"></IonInput>
   <IonInput className='ion-margin-top' label="Assigned" type='text' labelPlacement="floating" fill='outline' placeholder="Assigned to"></IonInput>
@@ -30,7 +37,12 @@ const router =useIonRouter();
       <IonIcon slot="end"  icon={add}></IonIcon>
       </IonButton>
       </form>
-    </IonCard>
+      </IonCard>
+        </IonCol>
+      </IonRow>
+    </IonGrid>
+    
+   
     </IonContent>
     </IonPage>
 

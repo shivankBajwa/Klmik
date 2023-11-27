@@ -3,9 +3,9 @@ import PageLayout from '../../Layout/PageLayout/PageLayout'
 
 function SearchPage() {
   return (
-    <PageLayout>
+    <div>
       SearchPage
-      </PageLayout>
+      </div>
   )
 }
 

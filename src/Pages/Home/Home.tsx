@@ -4,6 +4,9 @@ import './Home.css';
 import PageLayout from '../../Layout/PageLayout/PageLayout';
 import { add } from 'ionicons/icons';
 import { Redirect } from 'react-router';
+import StaffCard from '../../Components/StaffCard/StaffCard';
+import AddMoney from '../../Components/AddMoney/AddMoney';
+import InputExpenditure from '../../Components/InputExpenditure/InputExpenditure';
 const Home: React.FC = () => {
 const router=useIonRouter();
 const AddNewProject=()=>{
@@ -11,7 +14,11 @@ router.push(
   '/addProject','root'
 )
 }
-
+const ProjectDetails=()=>{
+router.push(
+  '/projectInfo','root'
+)
+}
   const dumpyCardData=[{
     projectName:"Moradabad",
     status:"ok",
@@ -74,23 +81,18 @@ router.push(
   return (
     <>
 
-  <PageLayout>
-<IonHeader>
-    <IonToolbar>
-    
-      <IonTitle color={'success'}>Kl_Mik</IonTitle>
-    </IonToolbar>
+  <PageLayout ToolbarName='Kl_Mik' backButtonVisibility={false} >
+  <IonHeader>
   </IonHeader>
-  
       {dumpyCardData.map((item,index)=>{
       return(
-          <IonCard key={index}>
+          <IonCard key={index} onClick={ProjectDetails}>
       <IonCardHeader >
         <IonCardTitle>{item.projectName}</IonCardTitle>
         <IonCardSubtitle>Assigned to: {item.assigned}</IonCardSubtitle>
       </IonCardHeader>
   
-    <div style={{height:"5px",background:"red",margin:"0px",padding:"0px"}}><hr/></div>
+    <div style={{height:"5px",background:"blue",margin:"0px",padding:"0px"}}><hr/></div>
       <IonCardContent>Created at :{item.assigned} <br/>Due Date : {item.deadline} <br/>Total Expenditure :{item.expenditure} </IonCardContent>
     </IonCard>
     
@@ -99,11 +101,16 @@ router.push(
       })}
       
             <IonCard className='addCard' color={"light"} >
+            
             <IonButton onClick={AddNewProject} type="button">
             <IonIcon icon={add} size="large"></IonIcon>
             </IonButton>
+            <IonCardSubtitle className='ion-padding'>Add New Project</IonCardSubtitle>
+       
     </IonCard>
-  
+    <InputExpenditure/>
+  {/* <StaffCard/> */}
+  {/* <AddMoney/> */}
       </PageLayout>
       </>
   );

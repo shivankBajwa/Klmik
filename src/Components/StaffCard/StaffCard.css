@@ -1,0 +1,8 @@
+.flexProp{
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.gapAdjustment{
+    margin:6px 16px
+  }

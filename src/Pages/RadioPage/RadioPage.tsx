@@ -3,9 +3,9 @@ import PageLayout from '../../Layout/PageLayout/PageLayout'
 
 function RadioPage() {
   return (
-    <PageLayout>
+    <div>
       Radio Page
-      </PageLayout>
+      </div>
   )
 }
 

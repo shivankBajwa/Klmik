@@ -24,31 +24,41 @@ import './theme/variables.css';
 import ExploreContainer from './Layout/Tab/Tab';
 import AddProject from './Pages/AddProject/AddProject';
 import Tab from './Layout/Tab/Tab';
+import AddMoney from './Components/AddMoney/AddMoney';
+import StaffCard from './Components/StaffCard/StaffCard';
+import ProjectInfo from './Pages/ProjectInfo/ProjectInfo';
+import StaffReport from './Pages/StaffReport/StaffReport';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-  <IonPage>
+  
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/">
+        <Route exact path="/home">
           <Home/>
         </Route>
         <Route exact path="/addProject">
         
           <AddProject/>
         </Route>
-        <Route exact path="/tab">
-        
-        <Tab/>
-      </Route>
-      
+        <Route exact path="/addMoney">
+          <AddMoney/>
+        </Route>
+
+        <Route exact path="/projectInfo">
+          <ProjectInfo/>
+        </Route> 
+        <Route exact path="/staffReport">
+          <StaffReport/>
+        </Route>
+
       </IonRouterOutlet>
     </IonReactRouter>
    {/* <Home/> */}
    
-   </IonPage>
+   
    </IonApp>
 );
 

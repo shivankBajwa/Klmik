@@ -5,6 +5,9 @@ import Home from '../../Pages/Home/Home';
 import RadioPage from '../../Pages/RadioPage/RadioPage';
 import LibraryPage from '../../Pages/AddProject/AddProject';
 import SearchPage from '../../Pages/SearchPage/SearchPage';
+import AddProject from '../../Pages/AddProject/AddProject';
+import ProjectInfo from '../../Pages/ProjectInfo/ProjectInfo';
+import { square, triangle } from 'ionicons/icons';
 
 interface ContainerProps { }
 
@@ -48,9 +51,29 @@ const Tab: React.FC<ContainerProps> = () => {
   //     </IonTabBar>
   //   </IonTabs>
   // </IonReactRouter>
-  <div>
-    wjhgdw
-  </div>
+  <IonTabs>
+    <IonTabBar slot='bottom'>
+      <IonTabButton tab="tab1" href='/tab1'>
+        <IonIcon icon={triangle}>
+          <IonLabel>tab1</IonLabel>
+        </IonIcon>
+      </IonTabButton>
+
+      <IonTabButton tab="tab2" href='/projectInfo'>
+        <IonIcon icon={square}>
+          <IonLabel>tab2</IonLabel>
+        </IonIcon>
+      </IonTabButton>
+    </IonTabBar>
+
+    <IonRouterOutlet>
+      <Route path={"/"} component={Home}/>
+      <Route path={"/projectInfo"} component={ProjectInfo}/>
+      <Route exact path ="/">
+        <Redirect to="/tab1"/>
+      </Route>
+      </IonRouterOutlet>
+  </IonTabs>
     );
 };
 
