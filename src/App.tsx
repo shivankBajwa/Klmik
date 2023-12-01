@@ -28,6 +28,7 @@ import AddMoney from './Components/AddMoney/AddMoney';
 import StaffCard from './Components/StaffCard/StaffCard';
 import ProjectInfo from './Pages/ProjectInfo/ProjectInfo';
 import StaffReport from './Pages/StaffReport/StaffReport';
+import UserLandingPage from './Pages/UserLandingPage/UserLandingPage';
 
 setupIonicReact();
 
@@ -36,7 +37,7 @@ const App: React.FC = () => (
   
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
+        <Route exact path="/">
           <Home/>
         </Route>
         <Route exact path="/addProject">
@@ -54,6 +55,9 @@ const App: React.FC = () => (
           <StaffReport/>
         </Route>
 
+        <Route exact path="/userLanding">
+          <UserLandingPage/>
+        </Route>
       </IonRouterOutlet>
     </IonReactRouter>
    {/* <Home/> */}

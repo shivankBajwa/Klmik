@@ -1,27 +1,40 @@
-import { IonBackButton, IonButtons, IonContent, IonFooter, IonHeader, IonIcon, IonLabel, IonPage, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react'
+import { IonBackButton, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react'
 import React, { Profiler } from 'react'
 import Header from '../Header/Header'
 import Tab from '../Tab/Tab'
-import { boat, home, mail, person, returnUpForward, settings, wallet } from 'ionicons/icons';
+import { add, boat, home, mail, person, returnUpForward, settings, wallet } from 'ionicons/icons';
 
 interface headerDetails{
   ToolbarName:string,
   backButtonVisibility?:boolean,
   backButtonHref?:string ,
   children: React.ReactNode,
-  showTabs?:boolean
+  showTabs?:boolean,
+  addButtonVisibility?:boolean,
+  onClickAdd?: () => void;
 }
-const  PageLayout=({ToolbarName,children,backButtonVisibility=true,showTabs=true,backButtonHref}:headerDetails)=> {
+const  PageLayout=({ToolbarName,children,backButtonVisibility=true,showTabs=true,addButtonVisibility=false,backButtonHref,onClickAdd}:headerDetails)=> {
+  
+  
+  
   return (
    <IonPage>
     <IonHeader>
     <IonToolbar>
+  
       {backButtonVisibility===true? <IonButtons slot='start'>
         <IonBackButton defaultHref={backButtonHref}/>
-      </IonButtons>:<div></div>}
-      <IonTitle color={'success'}>{ToolbarName}</IonTitle>
+      </IonButtons>:""}
+  <IonTitle slot='start' color={'primary'} >{ToolbarName}</IonTitle>
+      {addButtonVisibility ? <IonButtons slot="end">
+                <IonButton onClick={(e)=>onClickAdd && onClickAdd()}><IonIcon size='large' icon={add}></IonIcon></IonButton>
+              </IonButtons>:""}
+<IonChip slot='end' color={'primary'}>SC</IonChip>
     </IonToolbar>
   </IonHeader>
+  {/* <IonContent fullscreen>
+          {children}
+        </IonContent>
 
       {showTabs ? (
         <IonContent>
@@ -32,7 +45,7 @@ const  PageLayout=({ToolbarName,children,backButtonVisibility=true,showTabs=true
             </IonContent>
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
-            <IonTabButton tab="home" href="/home">
+            <IonTabButton tab="home" href="/">
               <IonIcon icon={home} />
               <IonLabel>Home</IonLabel>
             </IonTabButton>
@@ -59,8 +72,10 @@ const  PageLayout=({ToolbarName,children,backButtonVisibility=true,showTabs=true
         <IonContent fullscreen>
           {children}
         </IonContent>
-      )}
-
+      )} */}
+<IonContent fullscreen>
+          {children}
+        </IonContent>
   
 
     </IonPage>

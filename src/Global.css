@@ -1,0 +1,8 @@
+.-webkit-fill-available{
+    width: -webkit-fill-available;
+}
+.justifycenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

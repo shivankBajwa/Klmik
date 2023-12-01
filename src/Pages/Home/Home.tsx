@@ -7,6 +7,7 @@ import { Redirect } from 'react-router';
 import StaffCard from '../../Components/StaffCard/StaffCard';
 import AddMoney from '../../Components/AddMoney/AddMoney';
 import InputExpenditure from '../../Components/InputExpenditure/InputExpenditure';
+import UserLandingPage from '../UserLandingPage/UserLandingPage';
 const Home: React.FC = () => {
 const router=useIonRouter();
 const AddNewProject=()=>{
@@ -14,6 +15,11 @@ router.push(
   '/addProject','root'
 )
 }
+const userLanding=()=>{
+  router.push(
+    '/userLanding','root'
+  )
+  }
 const ProjectDetails=()=>{
 router.push(
   '/projectInfo','root'
@@ -81,9 +87,7 @@ router.push(
   return (
     <>
 
-  <PageLayout ToolbarName='Kl_Mik' backButtonVisibility={false} >
-  <IonHeader>
-  </IonHeader>
+  <PageLayout ToolbarName='Kluu_Mik' addButtonVisibility={true} onClickAdd={userLanding} backButtonVisibility={false} >
       {dumpyCardData.map((item,index)=>{
       return(
           <IonCard key={index} onClick={ProjectDetails}>
@@ -108,7 +112,7 @@ router.push(
             <IonCardSubtitle className='ion-padding'>Add New Project</IonCardSubtitle>
        
     </IonCard>
-    <InputExpenditure/>
+    <IonButton onClick={userLanding}>open use Landing</IonButton>
   {/* <StaffCard/> */}
   {/* <AddMoney/> */}
       </PageLayout>
