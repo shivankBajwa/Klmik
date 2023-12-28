@@ -34,14 +34,31 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-  
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/">
-          <Home/>
+        <Route exact path="/home">
+          <Tab/>
         </Route>
+        {/* <Route exact path="/projectInfo">
+          <Tab/>
+        </Route> */}
+        <Route exact path="/">
+          <Redirect to="/home"/>
+          <Tab/>
+        </Route>
+        <Route exact path="/tab2">
+          <Redirect to="/tab2"/>
+          <Tab/>
+        </Route>
+        <Route exact path="/tab1">
+          <Redirect to="/tab1"/>
+          <Tab/>
+        </Route>
+        {/* <Route exact path="/projectInfo">
+          <Redirect to="/projectInfo"/>
+          <Tab/>
+        </Route> */}
         <Route exact path="/addProject">
-        
           <AddProject/>
         </Route>
         <Route exact path="/addMoney">

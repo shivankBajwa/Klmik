@@ -3,7 +3,7 @@ import StaffCard from '../../Components/StaffCard/StaffCard'
 import PageLayout from '../../Layout/PageLayout/PageLayout'
 import pieChart from "../../assets/simple-donut-chart.svg"
 import "./ProjectInfo.css"
-function PrajectInfo() {
+function ProjectInfo() {
 
   return (
     <>
@@ -25,7 +25,7 @@ function PrajectInfo() {
          <IonCard  className='gapAdjustment'>
           <h4>Project Progress</h4>
          <IonRange aria-label="Custom range" value={50} pin={true} onIonChange={({ detail }) => console.log('ionChange emitted value: ' + detail.value)}
-  ></IonRange>;
+  ></IonRange>
          </IonCard>
          <IonGrid>
     <IonRow >
@@ -71,4 +71,4 @@ function PrajectInfo() {
   )
 }
 
-export default PrajectInfo
+export default ProjectInfo

@@ -21,6 +21,8 @@ function UserLandingPage() {
     const[labor,setLabor]=useState(false);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpenReq, setIsModalOpenReq] = useState(false);
+    const [isModalOpenEquip, setIsModalOpenEquip] = useState(false);
 
     const openModal = () => {
       setIsModalOpen(true);
@@ -28,6 +30,14 @@ function UserLandingPage() {
   
     const closeModal = () => {
       setIsModalOpen(false);
+    };
+
+    const closeModalReq = () => {
+      setIsModalOpenReq(false);
+    };
+    
+    const closeModalEquip = () => {
+      setIsModalOpenEquip(false);
     };
 
   return (
@@ -139,12 +149,12 @@ function UserLandingPage() {
          </IonButton>
          </IonCol>
          <IonCol  size='12'sizeSm='6' sizeXs='6' sizeMd='6' sizeLg='3' sizeXl='3'>
-         <IonButton expand='block' id="open-modal2" onClick={()=>setRequest(true)}  >
+         <IonButton expand='block' id="open-modal2" onClick={()=>setIsModalOpenReq(true)}  >
            Request Demand
          </IonButton>
          </IonCol>
          <IonCol  size='12'sizeSm='6' sizeXs='6' sizeMd='6' sizeLg='3' sizeXl='3'>
-         <IonButton expand='block' id="open-modal3" onClick={()=>setEquipment(true)} >
+         <IonButton expand='block' id="open-modal3" onClick={()=>setIsModalOpenEquip(true)} >
            Enter Equipment
          </IonButton>
          </IonCol>
@@ -161,9 +171,9 @@ function UserLandingPage() {
   
         </PageLayout>
         {isModalOpen? <Modal ModalToolbarName='Expenditure'  isOpen={isModalOpen} onClose={closeModal}><InputExpenditure/></Modal>:null}
-        {request? <Modal ModalToolbarName='request'  isOpen={request} onClose={closeModal}><InputExpenditure/></Modal>:null}
-        {labor? <Modal ModalToolbarName='labor'  isOpen={isModalOpen} onClose={closeModal}><InputExpenditure/></Modal>:null}
-        {equipment? <Modal ModalToolbarName='equipment'  isOpen={isModalOpen} onClose={closeModal}><InputExpenditure/></Modal>:null}
+        {isModalOpenReq? <Modal ModalToolbarName='Request'  isOpen={isModalOpenReq} onClose={closeModalReq}><InputExpenditure/></Modal>:null}
+        {isModalOpenEquip? <Modal ModalToolbarName='Labor'  isOpen={isModalOpenEquip} onClose={closeModalEquip}><InputExpenditure/></Modal>:null}
+        {equipment? <Modal ModalToolbarName='Equipment'  isOpen={isModalOpen} onClose={closeModal}><InputExpenditure/></Modal>:null}
        
       </>
         )

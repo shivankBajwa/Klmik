@@ -32,15 +32,13 @@ const  PageLayout=({ToolbarName,children,backButtonVisibility=true,showTabs=true
 <IonChip slot='end' color={'primary'}>SC</IonChip>
     </IonToolbar>
   </IonHeader>
-  {/* <IonContent fullscreen>
-          {children}
-        </IonContent>
-
+ 
+{/* 
       {showTabs ? (
         <IonContent>
            <IonTabs>
           <IonRouterOutlet>
-            <IonContent>
+            <IonContent fullscreen>
               {children}
             </IonContent>
           </IonRouterOutlet>
@@ -69,9 +67,7 @@ const  PageLayout=({ToolbarName,children,backButtonVisibility=true,showTabs=true
         </IonContent>
 
       ) : (
-        <IonContent fullscreen>
-          {children}
-        </IonContent>
+       null
       )} */}
 <IonContent fullscreen>
           {children}

@@ -8,7 +8,8 @@ import StaffCard from '../../Components/StaffCard/StaffCard';
 import AddMoney from '../../Components/AddMoney/AddMoney';
 import InputExpenditure from '../../Components/InputExpenditure/InputExpenditure';
 import UserLandingPage from '../UserLandingPage/UserLandingPage';
-const Home: React.FC = () => {
+import Tab from '../../Layout/Tab/Tab';
+const Home= () => {
 const router=useIonRouter();
 const AddNewProject=()=>{
 router.push(
@@ -88,6 +89,7 @@ router.push(
     <>
 
   <PageLayout ToolbarName='Kluu_Mik' addButtonVisibility={true} onClickAdd={userLanding} backButtonVisibility={false} >
+    
       {dumpyCardData.map((item,index)=>{
       return(
           <IonCard key={index} onClick={ProjectDetails}>
@@ -116,6 +118,7 @@ router.push(
   {/* <StaffCard/> */}
   {/* <AddMoney/> */}
       </PageLayout>
+      
       </>
   );
 };
