@@ -2,6 +2,8 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonPage, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './Pages/Home/Home';
+import { initializeApp } from 'firebase/app';
+import { Capacitor } from '@capacitor/core';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -29,13 +31,60 @@ import StaffCard from './Components/StaffCard/StaffCard';
 import ProjectInfo from './Pages/ProjectInfo/ProjectInfo';
 import StaffReport from './Pages/StaffReport/StaffReport';
 import UserLandingPage from './Pages/UserLandingPage/UserLandingPage';
+import LoginPage from './Pages/LoginPage/LoginPage';
+import UserDetailPage from './Pages/UserDetailPage/UserDetailPage';
+
+//import { useEffect } from 'react';
+//import { initializeApp } from "firebase/app";
+//import { getAnalytics } from "firebase/analytics";
 
 setupIonicReact();
+// var firebaseConfigAndroid = {
+//   apiKey: "API_KEY",
+//   authDomain: "PROJECT_ID.firebaseapp.com",
+//   // The value of `databaseURL` depends on the location of the database
+//   databaseURL: "https://DATABASE_NAME.firebaseio.com",
+//   projectId: "PROJECT_ID",
+//   storageBucket: "PROJECT_ID.appspot.com",
+//   messagingSenderId: "SENDER_ID",
+//   appId: "APP_ID",
+//   // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+//   measurementId: "G-MEASUREMENT_ID",
+// };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyD9l1LG9GinyWcVe7hCgO09boT6yfPulng",
+//   authDomain: "klmik-c7037.firebaseapp.com",
+//   projectId: "klmik-c7037",
+//   storageBucket: "klmik-c7037.appspot.com",
+//   messagingSenderId: "396379373601",
+//   appId: "1:396379373601:web:5f5d49d840dc34aabaa360",
+//   measurementId: "G-WXBZ1FJDPM"
+// };
 
-const App: React.FC = () => (
-  <IonApp>
+const App: React.FC = () => {
+//   useEffect(() => {
+//     // Initialize Firebase
+//     if (Capacitor.isNativePlatform()) {
+//       // For native platforms (iOS, Android)
+//       const firebase = initializeApp(firebaseConfigAndroid);
+//     } else {
+//       // For web platform
+//       // Firebase initialization code for web (if needed)
+//       const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+//     }
+//   }, []);
+
+  return(
+<IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
+      <Route exact path="/login">
+          <LoginPage/>
+        </Route>
+        <Route exact path="/userDetail">
+          <UserDetailPage/>
+        </Route>
         <Route exact path="/home">
           <Tab/>
         </Route>
@@ -81,6 +130,8 @@ const App: React.FC = () => (
    
    
    </IonApp>
-);
+  )
+}
+  
 
 export default App;

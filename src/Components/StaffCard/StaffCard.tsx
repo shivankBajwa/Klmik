@@ -1,6 +1,6 @@
 import { IonBackButton, IonButton, IonButtons, IonCard, IonCardSubtitle, IonCol, IonGrid, IonHeader, IonIcon, IonRow, IonTitle, IonToolbar, useIonRouter } from '@ionic/react'
 import React from 'react'
-import ShivankPhoto from "../../assets/shivankPhoto.png"
+import ShivankPhoto from "../../assets/Images/shivankPhoto.png"
 import "./StaffCard.css"
 
 function StaffCard() {

@@ -2,7 +2,7 @@ import React from 'react'
 import PageLayout from '../../Layout/PageLayout/PageLayout'
 import { IonBackButton, IonButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonPage, IonRow, IonTitle, IonToolbar, useIonRouter } from '@ionic/react'
 import { add } from 'ionicons/icons';
-import image2 from '../../assets/Klmik_Image_2.png'
+import image2 from '../../assets/Images/Klmik_Image_2.png'
 const AddProject=()=> {
 const router =useIonRouter();
   const AddProjectData=(e: React.FormEvent<HTMLFormElement>)=>{

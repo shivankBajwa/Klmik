@@ -2,13 +2,6 @@ import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, 
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router';
 import Home from '../../Pages/Home/Home';
-import RadioPage from '../../Pages/RadioPage/RadioPage';
-import LibraryPage from '../../Pages/AddProject/AddProject';
-import SearchPage from '../../Pages/SearchPage/SearchPage';
-import AddProject from '../../Pages/AddProject/AddProject';
-import ProjectInfo from '../../Pages/ProjectInfo/ProjectInfo';
-
-import UserLandingPage from '../../Pages/UserLandingPage/UserLandingPage';
 import { home, square, triangle } from 'ionicons/icons';
 import Tab2 from './Tab2';
 import { Tab1 } from './Tab1';
